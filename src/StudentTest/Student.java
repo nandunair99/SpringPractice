@@ -1,19 +1,34 @@
 package StudentTest;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Student {
-	private String name;
+	private Person person;
+	private String course;
 
-	public String getName() {
-		return name;
+	@Autowired
+	public Student(Person person,String course) {
+		this.course=course;
+		this.person = person;
 	}
-	@Required
-	public void setName(String name) {
-		this.name = name;
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
 	}
 
 	public void displayInfo() {
-		System.out.println("Hello: " + name);
+		System.out.println("Hello: " + this.person.getName()+ " Course: "+this.course);
 	}
 }
