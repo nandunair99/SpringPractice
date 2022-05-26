@@ -8,7 +8,8 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 	<context:annotation-config />
 	<bean id="studentbean" class="StudentTest.Student">
-
+		<property name="person" ref="personbean"></property>
+		<property name="course" ref="coursebean"></property>
 	</bean>
 
 	<bean id="personbean" class="StudentTest.Person">
@@ -17,7 +18,10 @@
 	<bean id="coursebean" class="java.lang.String">
 		<constructor-arg value="MCA" />
 	</bean>
-
-
+	<bean id="studentbean2" class="StudentTest.ProfessionFactory">
+	</bean>
+	<bean id="studentbean3" 
+		factory-method="getStudentInstance" factory-bean="studentbean2">
+	</bean>
 
 </beans>  

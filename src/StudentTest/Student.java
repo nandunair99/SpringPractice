@@ -2,13 +2,20 @@ package StudentTest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class Student {
+public class Student implements IProfession {
 	private Person person;
 	private String course;
 
+	public Student() {
+		System.out.println("Constructor with 0 parameters called");
+		this.course = "MSCIT";
+		this.person = new Person("nair");
+	}
+
 	@Autowired
-	public Student(Person person,String course) {
-		this.course=course;
+	public Student(Person person, String course) {
+		System.out.println("Constructor with 2 parameters called");
+		this.course = course;
 		this.person = person;
 	}
 
@@ -29,6 +36,6 @@ public class Student {
 	}
 
 	public void displayInfo() {
-		System.out.println("Hello: " + this.person.getName()+ " Course: "+this.course);
+		System.out.println("Hello: " + this.person.getName() + " Course: " + this.course);
 	}
 }
