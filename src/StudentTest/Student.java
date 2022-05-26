@@ -24,6 +24,7 @@ public class Student implements IProfession {
 	}
 
 	public void setPerson(Person person) {
+		System.out.println("Set person");
 		this.person = person;
 	}
 
@@ -32,6 +33,7 @@ public class Student implements IProfession {
 	}
 
 	public void setCourse(String course) {
+		System.out.println("Set course");
 		this.course = course;
 	}
 
