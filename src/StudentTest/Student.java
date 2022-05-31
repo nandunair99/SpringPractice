@@ -12,7 +12,11 @@ public class Student implements IProfession {
 		this.person = new Person("nair");
 	}
 
-	@Autowired
+	public void onStart() {
+		System.out.print("on start");
+	}
+
+	
 	public Student(Person person, String course) {
 		System.out.println("Constructor with 2 parameters called");
 		this.course = course;
